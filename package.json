@@ -15,7 +15,8 @@
     "next": "14.2.11",
     "next-auth": "^4.24.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "share_prompts": "file:"
   },
   "devDependencies": {
     "postcss": "^8",
