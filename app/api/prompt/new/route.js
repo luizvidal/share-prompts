@@ -10,7 +10,7 @@ export const POST = async (req) => {
 		const newPrompt = new Prompt({
 			creator: userId,
 			prompt: prompt,
-			tag,
+			tag: "#" + tag.replaceAll(" ", "_").replaceAll("#", ""),
 		});
 
 		await newPrompt.save();
