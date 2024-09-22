@@ -1,5 +1,6 @@
 import Prompt from "@models/prompt";
 import { connectToDB } from "@utils/database";
+import { serverErrorResponse, successResponse } from "@utils/responses";
 
 export const GET = async (req, { params }) => {
 	try {
@@ -9,8 +10,8 @@ export const GET = async (req, { params }) => {
 			creator: params.id,
 		}).populate("creator");
 
-		return new Response(JSON.stringify(prompts), { status: 200 });
+		return successResponse(prompts);
 	} catch (error) {
-		return new Response("Failed to fetch user prompts", { status: 500 });
+		return serverErrorResponse();
 	}
 };
