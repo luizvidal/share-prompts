@@ -34,7 +34,7 @@ const handler = NextAuth({
 					console.log(profile.name);
 					await User.create({
 						email: profile.email,
-						username: profile.name.replace(" ", "").toLowerCase(),
+						username: profile.name.replace(" ", "_").toLowerCase(),
 						//@ts-ignore
 						image: profile.picture,
 					});
