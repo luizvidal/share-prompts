@@ -149,9 +149,17 @@
 }
 
 /* PromptCard Component */
-.prompt_card {
+/* .prompt_card {
 	@apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
+} */
+
+/* PromptCard Component */
+.prompt_card {
+	@apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-[250px];
 }
+
+
+ 
 
 .flex-center {
 	@apply flex justify-center items-center;
@@ -168,3 +176,22 @@
 .flex-between {
 	@apply flex justify-between items-center;
 }
+
+/* custom scrollbar stylization */
+::-webkit-scrollbar {
+	width: 10px !important;
+}
+
+::-webkit-scrollbar-track {
+	background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #ea620c !important;
+	border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #d45709 !important;
+}
+/* custom scrollbar stylization */
