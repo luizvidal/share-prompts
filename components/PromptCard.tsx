@@ -5,15 +5,15 @@ import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
-	const { data: session } = useSession();
+const PromptCard: any = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+	const { data: session } = useSession<any>();
 	const pathName = usePathname();
 	const router = useRouter();
-	const [copied, setCopied] = useState("");
+	const [copied, setCopied] = useState<any>("");
 	const [copyTimeout, setCopyTimeout] = useState(null);
 
 	const handleProfileClick = () => {
-		if (post.creator._id == session?.user.id) return router.push("/profile");
+		if (post.creator._id == (session as any)?.user.id) return router.push("/profile");
 
 		router.push(`/profile/${post.creator._id}?name=${post.creator.username}`);
 	};
@@ -72,7 +72,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 				{post.tag}
 			</p>
 
-			{session?.user.id == post.creator._id && pathName == "/profile" && (
+			{(session as any)?.user.id == post.creator._id && pathName == "/profile" && (
 				<div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
 					<p
 						className="font-inter text-sm green_gradient cursor-pointer"

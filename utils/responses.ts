@@ -4,7 +4,7 @@ export const notFoundErrorResponse = (resource = "Prompt") =>
 export const serverErrorResponse = () =>
 	new Response("Internal Server Error", { status: 500 });
 
-export const successResponse = (res, status = 200) =>
+export const successResponse = (res: string | object, status = 200) =>
 	new Response(JSON.stringify(res), { status });
 
 export const successDeleteResponse = (resource = "Prompt") =>

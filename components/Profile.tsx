@@ -1,6 +1,6 @@
 import PromptCard from "./PromptCard";
 
-const Profile = ({ name, desc, data, handleEdit, handleDelete }) => (
+const Profile: any = ({ name, desc, data, handleEdit, handleDelete }) => (
 	<section className="w-full">
 		<h1 className="head_text text-left">
 			<span className="blue_gradient">{name} Profile</span>
@@ -8,7 +8,7 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => (
 		</h1>
 
 		<div className="mt-10 prompt_layout">
-			{data.map((post) => (
+			{data.map((post: any) => (
 				<PromptCard
 					key={post._id}
 					post={post}
