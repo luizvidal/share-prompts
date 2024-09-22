@@ -1,4 +1,5 @@
 "use client";
+
 import Profile from "@components/Profile";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -12,14 +13,19 @@ const MyProfile = () => {
 
 	useEffect(() => {
 		const fetchPosts = async () => {
+			//@ts-ignore
 			const response = await fetch(`/api/users/${session?.user.id}/posts`);
 			const data = await response.json();
 
 			setMyPosts(data);
 		};
 
+		//@ts-ignore
 		if (session?.user.id) fetchPosts();
-	}, [session?.user.id]);
+	}, [
+		//@ts-ignore
+		session?.user.id,
+	]);
 
 	const handleEdit = (post) => {
 		router.push(`/update-prompt?id=${post._id}`);

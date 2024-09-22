@@ -27,7 +27,7 @@ const Nav = () => {
 					height={30}
 					className="object-contain"
 				/>
-				<p className="logo_text">Promptopia</p>
+				<p className="logo_text">SharePrompts</p>
 			</Link>
 
 			{/* Desktop Navigation */}
@@ -38,7 +38,11 @@ const Nav = () => {
 							Create Post
 						</Link>
 
-						<button type="button" onClick={signOut} className="outline_btn">
+						<button
+							type="button"
+							onClick={() => signOut()}
+							className="outline_btn"
+						>
 							Sign Out
 						</button>
 
@@ -55,7 +59,7 @@ const Nav = () => {
 				) : (
 					<>
 						{providers &&
-							Object.values(providers).map((provider) => (
+							Object.values(providers).map((provider: any) => (
 								<button
 									type="button"
 									key={provider.name}
@@ -116,7 +120,7 @@ const Nav = () => {
 				) : (
 					<>
 						{providers &&
-							Object.values(providers).map((provider) => (
+							Object.values(providers).map((provider: any) => (
 								<button
 									type="button"
 									key={provider.name}
