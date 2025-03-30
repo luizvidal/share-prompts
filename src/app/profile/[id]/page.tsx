@@ -22,7 +22,11 @@ const UserProfile = ({ params }: { params: Promise<{ id: string }> }) => {
 	}, [prompts]);
 
 	if (loading) {
-		return <div className="flex-center">Loading...</div>;
+		return (
+			<div className="flex-center min-h-[200px]">
+				<div className="loader" />
+			</div>
+		);
 	}
 
 	return (
